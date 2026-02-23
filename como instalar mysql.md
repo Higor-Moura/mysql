@@ -49,6 +49,9 @@ sudo mysql -u root
 
 ## 4. Criar usuário para o Workbench
 
+⚠️ Se a conexão for local mantenha no codigo o "localhost":
+se for preciso conectar no workbench de outra maquina troque o "localhost" pelo IP da maquina que vai conectar ou coloque "%" isso lebera acesso de qualquer ip ou se for o caso de precisar liberar so para uma rede especifica voce vai rtrocar no codigo por exemplo rede 17 para liberar toda a rede 17 voce vai colocar assim "192.168.17.%".
+
 No prompt do MySQL, execute:
 
 ```sql
@@ -68,6 +71,20 @@ exit;
 mysql -u master -p
 ```
 Digite a senha: 12345678
+
+## 5.1 Proximo passo Liberar no sistema o acesso externo ao banco
+
+Acesse o arquivo de configuração do Mysql para liberar o acesso 
+
+```bash
+sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+```
+Verifique se está
+
+```
+bind-address = 0.0.0.0
+```
+- ⚠️ Se estiver 127.0.0.1 nao vai aceitar conexão externa 
 
 ## 6. Configurar no MySQL Workbench
 

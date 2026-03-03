@@ -75,5 +75,5 @@ exit
 ```
 
 ```
-mysql -u root <database> > < <arquivo de backup.sql> -v
+mysql -u root <database>  <  <arquivo de backup.sql> -v
 ```
